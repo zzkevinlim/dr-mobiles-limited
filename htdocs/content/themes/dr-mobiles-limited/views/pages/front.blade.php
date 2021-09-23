@@ -11,7 +11,7 @@
         </div>
     </section>
     <section class="container pb-[50px] md:pb-[100px] px-[15px] mx-auto">
-        <h2 class="font-primary text-[30px] leading-[30px] text-black  pb-[15px] m-0">{{ get_field('title_2') }}</h2>
+        <h2 class="font-primary text-[30px] leading-[30px] text-black pb-[15px] m-0">{{ get_field('title_2') }}</h2>
         <article>
             <p class="font-primary text-[16px] md:text-[20px] text-black  m-0">{!! get_field('content_2a') !!}
                 <a href="{{ get_field('link_2b') }}" target="_blank" class="font-bold no-underline text-dml-blue transition-all ease-in-out duration-300 hover:text-dml-blue-200">{!! get_field('content_2b') !!}</a>
@@ -23,7 +23,7 @@
         <div class="grid grid-cols-12 gap-y-[30px] md:gap-y-[50px] gap-x-[15px] md:gap-x-[50px]">
             @foreach(get_field('products_3') as $product)
                 <div class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-start">
-                    <img src="{{ $product['image']['url'] }}" alt="{{ $product['image']['alt'] }}" loading="lazy" class="object-contain object-center max-h-[300px]">
+                    <img src="{{ $product['image']['url'] }}" alt="{{ $product['image']['alt'] }}" loading="lazy" class="object-contain object-center min-h-[300px] max-h-[300px]">
                 </div>
                 <div class="col-span-12 md:col-span-9 flex flex-col items-center md:items-start justify-center">
                     <h3 class="font-primary font-medium text-[20px] md:text-[30px] leading-[20px] md:leading-[30px] text-black pb-[15px] m-0">{{ $product['title'] }}</h3>
@@ -51,7 +51,7 @@
                 </div>
             @endforeach
         </div>
-        <h2 class="font-primary text-[30px] leading-[30px] text-black  pb-[15px] m-0">{{ get_field('title_5') }}</h2>
+        <h2 class="font-primary text-[30px] leading-[30px] text-black pb-[15px] m-0">{{ get_field('title_5') }}</h2>
         <article>
             <p class="font-primary text-[16px] md:text-[20px] text-black  m-0">{!! get_field('content_5') !!}</p>
         </article>

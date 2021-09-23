@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="container pt-[50px] px-[15px] mx-auto">
+    <section class="container py-[50px] px-[15px] mx-auto">
         @php(do_action('woocommerce_before_main_content'))
         @loop
         @php(do_action('woocommerce_before_single_product'))

@@ -110,7 +110,7 @@ Ajax::listen('submit_contact_us_form', function () {
     }
 
     $to = array_column(get_field('contact_recipients', 'options'), 'email');
-    $subject = '[' . home_url() . '] Contact Us Enquiry';
+    $subject = get_bloginfo('name') . ' Contact Us Enquiry';
     $headers = [];
     $headers[] = 'From: ' . $_POST['name'] . ' <' . $_POST['email'] . '>';
 
@@ -155,16 +155,29 @@ Filter::add('comments_template', ['WC_Template_Loader', 'comments_template_loade
 Filter::add('woocommerce_currency_symbol', function ($currency_symbol, $currency) {
     switch ($currency) {
         case 'NZD':
-            $currency_symbol = '$';
+            $currency_symbol = 'NZD';
             break;
     }
     return $currency_symbol;
 });
 
-Filter::add('loop_shop_per_page', function () {
-    return 12;
-});
 
 Action::add('wp_enqueue_scripts', function () {
     wp_enqueue_script('wc-add-to-cart-variation');
 });
+
+Filter::add('woocommerce_breadcrumb_defaults', function ($args) {
+    $args['delimiter'] = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'>
+  <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd' />
+</svg>";
+
+    return $args;
+});
+
+Action::add('woocommerce_before_shop_loop_item_title', function () {
+    echo '<div class="woocommerce-product-thumnail-wrapper">';
+}, 9);
+
+Action::add('woocommerce_before_shop_loop_item_title', function () {
+    echo '</div>';
+}, 11);

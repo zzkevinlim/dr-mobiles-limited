@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="container pt-[50px] px-[15px] mx-auto">
+    <section class="container py-[50px] px-[15px] mx-auto">
         @loop
         @template('parts.content', 'page')
         @if(comments_open() || get_comments_number())

@@ -13,7 +13,7 @@
     <section class="container pb-[50px] md:pb-[100px] px-[15px] mx-auto">
         <div class="grid grid-cols-12">
             <div class="col-span-12 md:col-span-3 flex items-center justify-center md:justify-end order-2 md:order-1">
-                <img src="{{ get_field('image_1')['url'] }}" alt="{{ get_field('image_1')['alt'] }}" loading="lazy" class="object-contain object-center max-h-[300px]">
+                <img src="{{ get_field('image_1')['url'] }}" alt="{{ get_field('image_1')['alt'] }}" loading="lazy" class="object-contain object-center min-h-[300px] max-h-[300px]">
             </div>
             <div class="col-span-12 md:col-span-9 order-1 md:order-2">
                 <script src="https://drmobilesltd.repairdesk.co/widgets/include.js?token=571ef0123424b1461645330&height=300&width=100%&scrolling=no"></script>

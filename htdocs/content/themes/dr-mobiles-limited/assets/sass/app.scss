@@ -12,12 +12,12 @@ html, body {
 }
 
 body {
-  @apply debug-screens;
+  //@apply debug-screens;
   touch-action: manipulation;
 }
 
 ::-webkit-scrollbar {
-  @apply w-[8px] px-[5px];
+  @apply w-[8px] h-[8px];
 }
 
 ::-webkit-scrollbar-track {

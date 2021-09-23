@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="col-span-12 md:col-span-6 xl:col-span-3 flex items-center justify-center xl:items-end xl:justify-end">
-                <img src="{{ get_field('image_1')['url'] }}" alt="{{ get_field('image_1')['alt'] }}" loading="lazy" class="object-contain object-center max-h-[300px]">
+                <img src="{{ get_field('image_1')['url'] }}" alt="{{ get_field('image_1')['alt'] }}" loading="lazy" class="object-contain object-center min-h-[300px] max-h-[300px]">
             </div>
         </div>
     </section>

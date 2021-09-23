@@ -32,7 +32,7 @@
             @foreach($menu_array as $menu_index => $menu_item)
                 <li class="flex items-center relative" x-data="{ showSubMenu_{{ $menu_index }}: false }" x-on:mouseover="showSubMenu_{{ $menu_index }} = true" x-on:mouseover.away="showSubMenu_{{ $menu_index }} = false">
                     @if($loop->last)
-                        <a href="{{ $menu_item['url'] }}" target="{{ $menu_item['target'] }}" class="inline-flex items-center justify-center font-secondary font-extrabold italic no-underline font-bold text-[16px] text-dml-blue text-center h-[80%] px-[15px] border-solid border-[1px] border-dml-blue rounded-[5px] mx-[30px] transition-all ease-in-out duration-300 hover:text-white hover:bg-dml-blue">{{ $menu_item['title'] }}</a>
+                        <a href="{{ $menu_item['url'] }}" target="{{ $menu_item['target'] }}" class="inline-flex items-center justify-center font-secondary font-extrabold italic no-underline text-[16px] text-dml-blue text-center h-[80%] px-[15px] border-solid border-[1px] border-dml-blue rounded-[5px] mx-[30px] transition-all ease-in-out duration-300 hover:text-white hover:bg-dml-blue">{{ $menu_item['title'] }}</a>
                     @else
                         <a href="{{ $menu_item['url'] }}" target="{{ $menu_item['target'] }}" class="inline-flex items-center justify-center font-primary font-bold no-underline text-[16px] @if($menu_item['url'] == $current_url) text-dml-blue-200 @else text-dml-blue @endif text-center h-full px-[30px] transition-all ease-in-out duration-300 hover:text-white hover:bg-dml-blue">{{ $menu_item['title'] }}</a>
                     @endif

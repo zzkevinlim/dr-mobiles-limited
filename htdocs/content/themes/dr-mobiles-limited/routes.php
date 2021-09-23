@@ -70,9 +70,9 @@ Route::any('product_category', function () {
     return view('shop.archive');
 });
 
-Route::any('product_tag', function () {
-    return view('shop.archive');
-});
+//Route::any('product_tag', function () {
+//    return view('shop.archive');
+//});
 
 Route::any('product', function () {
     return view('shop.single');
@@ -86,9 +86,9 @@ Route::any('checkout', function () {
     return view('shop.checkout');
 });
 
-Route::any('account', function () {
-    return view('shop.account');
-});
+//Route::any('account', function () {
+//    return view('shop.account');
+//});
 
 Route::any('wc_endpoint', function () {
     return view('shop.wc-endpoint');

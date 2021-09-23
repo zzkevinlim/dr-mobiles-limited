@@ -86,7 +86,7 @@ return [
     //]
 
     'woocommerce',
-    'wc-product-gallery-zoom',
+//    'wc-product-gallery-zoom',
     'wc-product-gallery-lightbox',
     'wc-product-gallery-slider'
 ];

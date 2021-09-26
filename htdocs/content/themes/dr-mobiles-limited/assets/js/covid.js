@@ -3,7 +3,6 @@ import 'swiper/css/bundle';
 
 let swiper_covid = new Swiper('.swiper-covid', {
   modules: [Autoplay, Pagination],
-  slidesPerView: 1,
   loop: true,
   autoplay: {
     delay: 3000,
@@ -13,5 +12,16 @@ let swiper_covid = new Swiper('.swiper-covid', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1280: {
+      slidesPerView: 3,
+    },
   },
 });

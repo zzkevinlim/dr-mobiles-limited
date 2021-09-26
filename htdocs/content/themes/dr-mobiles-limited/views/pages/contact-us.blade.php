@@ -5,15 +5,14 @@
         <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.245009870064!2d{{ get_field('google_maps_longitude') }}!3d{{ get_field('google_maps_latitude') }}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d39d65211effb%3A0xaf55d06cbff09561!2sDr+Mobiles+Limited!5e0!3m2!1sen!2smy!4v1532858801107">
         </iframe>
     </section>
-    <section class="bg-covid-yellow  h-[50vh] py-[50px] mb-[50px] md:mb-[100px] relative">
+    <section class="h-[70vh] py-[50px] mb-[50px] relative">
         <div class="swiper swiper-covid h-full">
             <div class="swiper-wrapper h-full">
-                <div class="swiper-slide swiper-lazy flex justify-center h-full">
-                    <img src="{{ get_field('covid_image_1', 'options')['url'] }}" alt="{{  get_field('covid_image_1', 'options')['alt'] }}" loading="lazy" class="object-contain object-center h-full shadow-md">
-                </div>
-                <div class="swiper-slide swiper-lazy flex justify-center h-full">
-                    <img src="{{ get_field('covid_image_2', 'options')['url'] }}" alt="{{  get_field('covid_image_2', 'options')['alt'] }}" loading="lazy" class="object-contain object-center h-full shadow-md">
-                </div>
+                @foreach (get_field('covid_images', 'options') as $covid)
+                    <div class="swiper-slide swiper-lazy flex justify-center h-full">
+                        <img src="{{ $covid['image']['url'] }}" alt="{{  $covid['image']['alt'] }}" loading="lazy" class="object-contain object-center h-full shadow-md">
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="swiper-pagination absolute z-[10] bottom-[5px]"></div>

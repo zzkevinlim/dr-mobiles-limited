@@ -44,13 +44,13 @@
         </div>
     </section>
     <section class="container pb-[50px] md:pb-[100px] px-[15px] mx-auto">
-        <div class="flex items-center justify-center">
-            @foreach(get_field('products_5') as $product)
-                <div class="col-span-4">
-                    <img src="{{ $product['image']['url'] }}" alt="{{ $product['image']['alt'] }}" loading="lazy" class="object-contain object-center w-full pb-[30px] pr-[30px]">
-                </div>
-            @endforeach
-        </div>
+{{--        <div class="flex items-center justify-center">--}}
+{{--            @foreach(get_field('products_5') as $product)--}}
+{{--                <div class="col-span-4">--}}
+{{--                    <img src="{{ $product['image']['url'] }}" alt="{{ $product['image']['alt'] }}" loading="lazy" class="object-contain object-center w-full pb-[30px] pr-[30px]">--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
         <h2 class="font-primary text-[30px] leading-[30px] text-black pb-[15px] m-0">{{ get_field('title_5') }}</h2>
         <article>
             <p class="font-primary text-[16px] md:text-[20px] text-black  m-0">{!! get_field('content_5') !!}</p>

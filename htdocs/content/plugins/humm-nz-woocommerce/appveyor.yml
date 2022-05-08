@@ -1,0 +1,37 @@
+branches:
+  only:
+    - master
+    - humm/develop
+    - humm/master
+environment:
+  tag_name: "%APPVEYOR_REPO_TAG_NAME%"
+  release_name: "oxipay-woocommerce_v%appveyor_repo_tag_name%.zip"
+before_build:
+  - ps: (Get-Content oxipay.php).replace("plugin_version_placeholder", $env:APPVEYOR_REPO_TAG_NAME ) | Set-Content oxipay.php
+build_script:
+  - ps: Invoke-Expression "7z a $env:release_name -xr'!.git' -x'!appveyor.yml' -x'!.gitignore' -x'!js/oxitest.js' -xr'!.vscode' -xr'!docker'"
+artifacts:
+  - path: $(release_name)
+    name: $(tag_name)
+    type: zip
+deploy:
+  - provider: GitHub
+    tag: $(tag_name)
+    release: v$(APPVEYOR_REPO_TAG_NAME)
+    description: $(APPVEYOR_REPO_COMMIT_MESSAGE)
+    auth_token:
+      secure: 56NAOqpMQYkuaKqIWixuwuHbYK+1VYaGXQITooXcBLAL1b5xYAAENylYsXh029zy
+    artifact: /.*\.zip/
+    force_update: true
+    draft: false
+    prerelease: false
+    on:
+      appveyor_repo_tag: true
+notifications:
+  - provider: Email
+    to:
+      - devadmin@oxipay.com.au
+  - provider: Slack
+    auth_token:
+      secure: yXpzER0fyDmh7wYR6zrrES+wGzz5010OpUvpb5UPMsQZO12Ag3TaeOjSsZ0tDQQ4WaNoNngsPOPiaYWmsfg3fhJrSyPy240FqSwDdhSPqC0=
+    channel: '#alerts'

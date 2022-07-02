@@ -18,6 +18,9 @@
           type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </script>
     <!--End of Zendesk Chat Script-->
+    <script src="https://js.afterpay.com/afterpay-1.x.js" data-analytics-enabled
+        async
+></script>
     @head
 </head>
 <body @php(body_class())>
